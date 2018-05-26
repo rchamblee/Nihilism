@@ -1,0 +1,4 @@
+== README
+OneBoard is a textboard with only one page, with no javascript and strictly simple CSS.
+
+<tt>rake doc:app</tt>.
