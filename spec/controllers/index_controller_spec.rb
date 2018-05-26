@@ -34,6 +34,12 @@ RSpec.describe IndexController, type: :controller do
 				expect(response.body).to include(CGI.escape_html(i))
 			}
 		end
+		
+		it "shows post timestamps" do
+			Post.create(message: script[0])
+			get :index
+			expect(response.body).to include(DateTime.now.strftime("%d/%m/%Y %H:%M"))
+		end
 	end
 end
 
@@ -51,6 +57,7 @@ feature 'Forms' do
 		fill_in "msg", with: script[0]
 		click_button "post"
 		fill_in "msg", with: script[1]
+		click_button "post"
 		expect(page).to have_xpath("//div//div")
 		expect(page).to have_content(script[1])
 	end

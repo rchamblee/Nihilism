@@ -1,16 +1,18 @@
 1b
 <%= form_tag("", method: "post") do %>
+	<%= label_tag(:parent, "Replying to:") %>
+	<%= number_field_tag(:parent, @reply_to) %>
 	<%= label_tag(:msg, "Message:") %>
 	<%= text_field_tag(:msg) %>
 	<%= submit_tag("post") %>
 <% end %>
 
 <% def display_thread(parent=nil) %>
-	<div class="post">
+	<%= content_tag(:div, class: "post") do %>
 		<%= parent&.message %><br/>
 		<% Post.where(parent: parent).each do |post| %>
 			<% display_thread(post) %><br/>
 		<% end %>
-	</div>
+	<% end %>
 <% end %>
 <% display_thread() %>
