@@ -33,6 +33,6 @@ RSpec.describe IndexController, type: :controller do
 				get :index
 				expect(response.body).to include(CGI.escape_html(i))
 			}
-		end		
+		end
 	end
 end
