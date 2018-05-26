@@ -5,7 +5,7 @@ RSpec.describe IndexController, type: :controller do
 	describe "index" do
 		it "has a title" do
 			get :index
-			response.should contain("1b")
+			expect(response.body).to match("1b")
 		end
 	end
 end
