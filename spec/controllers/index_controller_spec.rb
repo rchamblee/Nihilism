@@ -61,4 +61,11 @@ feature 'Forms' do
 		expect(page).to have_xpath("//div//div")
 		expect(page).to have_content(script[1])
 	end
+	
+	scenario "posts have reply links" do
+		post_id = Post.create(message: script[0]).id.to_s
+		visit "/"
+		click_link("reply-"+post_id)
+		expect(current_url).to be "/"+post_id
+	end
 end
