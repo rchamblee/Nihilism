@@ -19,8 +19,9 @@ RSpec.describe IndexController, type: :controller do
 				"For you!"]
 				
 			script.each {|i|
-				Post.new(message: i)
-				expect(response.body).to match(i)
+				Post.create(message: i)
+				get :index
+				expect(response.body).to include(CGI.escape_html(i))
 			}
 		end
 	end

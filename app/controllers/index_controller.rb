@@ -1,4 +1,4 @@
 class IndexController < ApplicationController
-	def index()
+	def index
 	end
 end

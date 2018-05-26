@@ -1,1 +1,5 @@
 1b
+<br/>
+<% Post.where(parent: nil).each do |post| %>
+	<%= post.message %><br/>
+<% end %>
