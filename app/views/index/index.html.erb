@@ -9,6 +9,7 @@
 
 <% def display_thread(parent=nil) %>
 	<%= content_tag(:div, class: "post") do %>
+		<%= parent&.created_at&.strftime("%d/%m/%Y %H:%M") %><br/>
 		<%= parent&.message %><br/>
 		<% Post.where(parent: parent).each do |post| %>
 			<% display_thread(post) %><br/>
