@@ -1,4 +1,10 @@
 1b
+<%= form_tag("", method: "post") do %>
+	<%= label_tag(:msg, "Message:") %>
+	<%= text_field_tag(:msg) %>
+	<%= submit_tag("post") %>
+<% end %>
+
 <% def display_thread(parent=nil) %>
 	<div class="post">
 		<%= parent&.message %><br/>

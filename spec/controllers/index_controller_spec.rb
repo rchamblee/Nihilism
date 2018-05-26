@@ -45,4 +45,13 @@ feature 'Forms' do
 		visit "/"
 		expect(page).to have_content(script[0])
 	end
+	
+	scenario "posting reply" do
+		visit "/"
+		fill_in "msg", with: script[0]
+		click_button "post"
+		fill_in "msg", with: script[1]
+		expect(page).to have_xpath("//div//div")
+		expect(page).to have_content(script[1])
+	end
 end
