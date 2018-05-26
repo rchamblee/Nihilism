@@ -66,6 +66,6 @@ feature 'Forms' do
 		post_id = Post.create(message: script[0]).id.to_s
 		visit "/"
 		click_link("reply-"+post_id)
-		expect(current_url).to be "/"+post_id
+		expect(current_path).to eq("/"+post_id)
 	end
 end
