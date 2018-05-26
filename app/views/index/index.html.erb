@@ -1,9 +1,11 @@
-1b
+<%= stylesheet_link_tag "style" %>
+
+<%= content_tag(:h1, "1b") %>
 <%= form_tag("", method: "post") do %>
-	<%= label_tag(:parent, "Replying to:") %>
-	<%= number_field_tag(:parent, @reply_to) %>
+	<%= hidden_field_tag(:parent, @reply_to) %>
+	<br/>
 	<%= label_tag(:msg, "Message:") %>
-	<%= text_field_tag(:msg) %>
+	<%= text_area_tag(:msg) %>
 	<%= submit_tag("post") %>
 <% end %>
 
@@ -11,7 +13,7 @@
 	<%= content_tag(:div, class: "post") do %>
 		<%= content_tag(:a, "Reply", href: parent&.id.to_s, id: "reply-"+parent&.id.to_s)%> 
 		<%= parent&.created_at&.strftime("%d/%m/%Y %H:%M") %><br/>
-		<%= parent&.message %><br/>
+		<%= content_tag(:p, parent&.message, class: "post_content") %>
 		<% Post.where(parent: parent).each do |post| %>
 			<% display_thread(post) %><br/>
 		<% end %>

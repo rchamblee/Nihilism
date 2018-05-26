@@ -65,7 +65,7 @@ feature 'Forms' do
 	scenario "posts have reply links" do
 		post_id = Post.create(message: script[0]).id.to_s
 		visit "/"
-		click_link("reply-"+post_id)
-		expect(current_path).to eq("/"+post_id)
+		click_link("reply-" + post_id)
+		expect(current_path).to eq("/" + post_id)
 	end
 end
