@@ -1,11 +1,13 @@
 1b
-<% def display_thread(parent) %>
-	<% if parent != nil %>
-		<%= Post.find(parent).message %><br/>
-	<% end %>
-	<% Post.where(parent: parent).each do |post| %>
-		<% display_thread(post.id) %><br/>
-	<% end %>
+<% def display_thread(parent=nil) %>
+	<div class="post">
+		<% if parent != nil %>
+			<%= Post.find(parent).message %><br/>
+		<% end %>
+		<% Post.where(parent: parent).each do |post| %>
+			<% display_thread(post.id) %><br/>
+		<% end %>
+	</div>
 <% end %>
 <br/>
-<% display_thread(nil) %>
+<% display_thread() %>
