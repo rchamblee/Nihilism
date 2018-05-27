@@ -42,12 +42,12 @@ RSpec.describe IndexController, type: :controller do
 		end
 		
 		it "posts are shown in the correct order" do
-			post_id = Post.create(message: "A").id
-			Post.create(parent: post_id, message: "B")
-			Post.create(parent: post_id, message: "C")
-			Post.create(message: "D")
+			post_id = Post.reply("A")
+			Post.reply("B", post_id)
+			Post.reply("C", post_id)
+			Post.reply("D")
 			get :index
-			expect(response.body).to have_text(/D.*A.*C.*B/)
+			expect(response.body).to have_text(/D.*A.*C.*B/m)
 		end
 	end
 end

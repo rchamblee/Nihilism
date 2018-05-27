@@ -36,7 +36,7 @@
 		
 		<br/>
 		<%= content_tag(:p, parent&.message, class: "post_content") %>
-		<% Post.where(parent: parent).each do |post| %>
+		<% Post.get_replies(parent&.id).each do |post| %>
 			<% display_thread(post) %><br/>
 		<% end %>
 	<% end %>
