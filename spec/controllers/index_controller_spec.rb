@@ -72,6 +72,14 @@ feature 'Forms' do
 	scenario "post number being replied to is shown" do
 		post_id = Post.create(message: script[0]).id.to_s
 		visit "/"+post_id
-		expect(page). to have_content("Replying to post "+post_id)
+		expect(page).to have_content("Replying to post "+post_id)
+	end
+
+	scenario "post numbers are shown" do
+		script.each {|i|
+			post_id = Post.create(message: i).id.to_s
+			visit "/"
+			expect(page).to have_content(post_id)
+		}
 	end
 end
