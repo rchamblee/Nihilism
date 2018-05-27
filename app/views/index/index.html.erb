@@ -1,12 +1,23 @@
 <%= stylesheet_link_tag "style" %>
 
-<%= content_tag(:h1, "1b") %>
-<%= form_tag("", method: "post") do %>
-	<%= hidden_field_tag(:parent, @reply_to) %>
-	<br/>
-	<%= label_tag(:msg, "Message:") %>
-	<%= text_area_tag(:msg) %>
-	<%= submit_tag("post") %>
+
+<%= content_tag(:div, class: "banner") do%>
+	<%= content_tag(:h1) do%>
+		1b
+	<% end %>
+	<%= content_tag(:h2) do%>
+		Funposting for the serverely mentally disturbed
+	<% end %>
+<% end %>
+
+<%= content_tag(:div, class: "post_form") do %>
+	<%= form_tag("", method: "post") do %>
+		<%= hidden_field_tag(:parent, @reply_to) %>
+		<br/>
+		<%= label_tag(:msg, "Message:") %><br/>
+		<%= text_area_tag(:msg) %><br/>
+		<%= submit_tag("post") %>
+	<% end %>
 <% end %>
 
 <% def display_thread(parent=nil) %>
