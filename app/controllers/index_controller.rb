@@ -10,6 +10,9 @@ class IndexController < ApplicationController
 		rescue ActionController::ParameterMissing
 			@error_msg = "Bad request: Cannot post empty message"
 			render status: :bad_request
+		rescue ActiveRecord::RecordNotFound
+			@error_msg = "Bad request: Cannot reply to non-existent post"
+			render status: :bad_request
 		end
 	end
 end
