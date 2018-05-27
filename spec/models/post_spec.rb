@@ -21,4 +21,13 @@ RSpec.describe Post, type: :model do
     end
     expect(Post.exists?(message: "Bring back freddo frogs")).to be_falsey
   end
+  
+  it "makes posts replying to old posts top level when orphaned" do
+    post_id = Post.create(message: "Bring back freddo frogs").id
+    last_id = post_id
+    255.times do
+      last_id=Post.create(parent:last_id, message: "E")
+    end
+    expect(Post.where(parent: post_id).count).to eq(0)
+  end
 end
