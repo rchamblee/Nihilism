@@ -68,4 +68,10 @@ feature 'Forms' do
 		click_link("reply-" + post_id)
 		expect(current_path).to eq("/" + post_id)
 	end
+	
+	scenario "post number being replied to is shown" do
+		post_id = Post.create(message: script[0]).id.to_s
+		visit "/"+post_id
+		expect(page). to have_content("Replying to post "+post_id)
+	end
 end
