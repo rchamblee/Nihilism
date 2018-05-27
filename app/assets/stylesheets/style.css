@@ -5,6 +5,12 @@ body {
 
 .banner {
 	text-align: center;
+	background-color:rgba(0,0,0,.4);
+	border-color: #1A1A1A;
+	border-width: 2px;
+	border-style: solid;
+	padding: 8px;
+	margin: 1em;
 }
 
 .post_form {
