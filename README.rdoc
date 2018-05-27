@@ -1,5 +1,6 @@
 == README
 {<img src="https://travis-ci.org/faissaloo/OneBoard.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/faissaloo/OneBoard]  
+
 OneBoard is an anonymous javascriptless textboard written in Ruby on Rails.  
 Setup is easy:
 <tt>bundle install; rake db:create db:migrate</tt>  
