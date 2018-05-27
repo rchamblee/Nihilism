@@ -67,7 +67,7 @@ feature 'Forms' do
 		click_button "post"
 		fill_in "msg", with: script[1]
 		click_button "post"
-		expect(page).to have_xpath("//div//div")
+		expect(page).to have_xpath("//div/div")
 		expect(page).to have_content(script[1])
 	end
 	
