@@ -5,6 +5,6 @@ class IndexController < ApplicationController
 	
 	def post
 		post_id = Post.create(parent: params[:parent], message: params.require(:msg)).id.to_s
-		redirect_to "/"+post_id+"#"+post_id
+		redirect_to "/"+post_id+"#reply-"+post_id
 	end
 end
