@@ -104,4 +104,10 @@ feature 'Forms' do
 			expect(page).to have_content(post_id)
 		}
 	end
+	
+	scenario "empty posts cause a soft error" do
+		visit "/"
+		click_button "post"
+		expect(page.status_code).to eq(:bad_request)
+	end
 end
