@@ -108,6 +108,6 @@ feature 'Forms' do
 	scenario "empty posts cause a soft error" do
 		visit "/"
 		click_button "post"
-		expect(page.status_code).to eq(:bad_request)
+		expect(page.status_code).to eq(400)
 	end
 end
