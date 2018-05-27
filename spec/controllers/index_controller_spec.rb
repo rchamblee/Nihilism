@@ -40,6 +40,15 @@ RSpec.describe IndexController, type: :controller do
 			get :index
 			expect(response.body).to include(DateTime.now.strftime("%d/%m/%Y %H:%M"))
 		end
+		
+		it "posts are shown in the correct order" do
+			post_id = Post.create(message: "A").id
+			Post.create(parent: post_id, message: "B")
+			Post.create(parent: post_id, message: "C")
+			Post.create(message: "D")
+			get :index
+			expect(response.body).to have_text(/D.*A.*C.*B/)
+		end
 	end
 end
 
