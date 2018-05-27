@@ -1,8 +1,14 @@
 class Post < ActiveRecord::Base
+	@@markdown = Redcarpet::Markdown.new(Redcarpet::Render::Safe, fenced_code_blocks: true)
+
 	validates :message, :presence => true
 	after_create :post_cap
 	after_update :update_children
 
+	def html
+		@@markdown.render(self.message).html_safe
+	end
+	
 	def self.reply(msg, parent_id="")
 		post_id = Post.create(message: msg, parent: parent_id).id
 		if parent_id != "" && parent_id != nil

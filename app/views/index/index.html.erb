@@ -35,7 +35,7 @@
 		<% end %>
 		
 		<br/>
-		<%= content_tag(:p, parent&.message, class: "post_content") %>
+		<%= content_tag(:p, parent&.html, class: "post_content") %>
 		<% Post.get_replies(parent&.id).each do |post| %>
 			<% display_thread(post) %><br/>
 		<% end %>

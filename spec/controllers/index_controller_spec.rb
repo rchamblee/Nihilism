@@ -55,7 +55,7 @@ end
 
 feature 'Forms' do
 	scenario "creating line breaks in posts" do
-		Post.reply("I ponder of something great\nMy lungs will fill and then deflate")
+		Post.reply("I ponder of something great  \nMy lungs will fill and then deflate")
 		visit "/"
 		expect(page).to have_xpath("//div[@class='post']/p/br")			
 	end
