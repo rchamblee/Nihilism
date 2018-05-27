@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-	@@markdown = Redcarpet::Markdown.new(Redcarpet::Render::Safe, fenced_code_blocks: true)
+	@@markdown = Redcarpet::Markdown.new(Redcarpet::Render::Safe.new(no_images: true), fenced_code_blocks: true)
 
 	validates :message, :presence => true
 	after_create :post_cap
@@ -32,5 +32,4 @@ class Post < ActiveRecord::Base
 			Post.find(@parent).update(last_reply: @id)
 		end
 	end
-	
 end
