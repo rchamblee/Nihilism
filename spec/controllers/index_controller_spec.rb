@@ -49,10 +49,16 @@ RSpec.describe IndexController, type: :controller do
 			get :index
 			expect(response.body).to have_text(/D.*A.*C.*B/m)
 		end
+		
 	end
 end
 
 feature 'Forms' do
+	scenario "creating line breaks in posts" do
+		Post.reply("I ponder of something great\nMy lungs will fill and then deflate")
+		visit "/"
+		expect(page).to have_xpath("//div[@class='post']/p/br")			
+	end
 	scenario "posting to board" do
 		visit "/"
 		fill_in "msg", with: script[0]
