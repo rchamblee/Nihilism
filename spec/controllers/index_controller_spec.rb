@@ -38,7 +38,7 @@ RSpec.describe IndexController, type: :controller do
 		it "shows post timestamps" do
 			Post.create(message: script[0])
 			get :index
-			expect(response.body).to include(DateTime.now.strftime("%d/%m/%Y %H:%M"))
+			expect(response.body).to have_text(/[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9][0-9][0-9] [0-9][0-9]:[0-9][0-9]/)
 		end
 		
 		it "posts are shown in the correct order" do
