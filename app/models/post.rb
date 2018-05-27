@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 	after_update :update_children
 
 	def html
-		@@markdown.render(self.message).html_safe
+		@@markdown.render(self.message)
 	end
 	
 	def self.reply(msg, parent_id="")

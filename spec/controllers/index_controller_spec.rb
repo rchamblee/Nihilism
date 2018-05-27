@@ -57,8 +57,15 @@ feature 'Forms' do
 	scenario "creating line breaks in posts" do
 		Post.reply("I ponder of something great  \nMy lungs will fill and then deflate")
 		visit "/"
-		expect(page).to have_xpath("//div[@class='post']/p/br")			
+		expect(page).to have_xpath("//div[@class='post_content']/p/br")	
 	end
+	
+	scenario "should not be able to add images" do
+		Post.reply('![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")')
+		visit "/"
+		expect(page).to_not have_xpath("//div[@class='post_content']/p/img")		
+	end
+
 	scenario "posting to board" do
 		visit "/"
 		fill_in "msg", with: script[0]

@@ -1,3 +1,102 @@
-// Place all the styles related to the index controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	color: #f6b3e5;
+	background-color: #c876ff;
+}
+
+.banner {
+	text-align: center;
+	background-color:rgba(0,0,0,.4);
+	border-color: #1A1A1A;
+	border-width: 2px;
+	border-style: solid;
+	padding: 8px;
+	margin: 1em;
+}
+
+.post_form {
+	border-color: #1A1A1A;
+	border-width: 2px;
+	border-style: solid;
+	padding: 8px;
+	float: right;
+	position: -webkit-sticky;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: #8c53b3;
+}
+.post_form textarea {
+	width: 30em;
+	height: 10em;
+}
+
+a {
+	padding: 4px;
+	color: #f6b3e5;
+	text-decoration: none;
+	font-weight: bold;
+	border-width: 2px;
+	border-style: outset;
+	border-color: #1A1A1A;
+	background-color:rgba(0,0,0,.2);
+	border-radius: 4px;
+	margin: 0.1em;;
+}
+
+input {
+	padding: 4px;
+	color: #f6b3e5;
+	text-decoration: none;
+	font-weight: bold;
+	border-width: 2px;
+	border-style: outset;
+	border-color: #1A1A1A;
+	background-color:rgba(0,0,0,.2);
+	border-radius: 4px;
+}
+
+a:hover {
+	border-style: solid;
+	background-color:rgba(0,0,0,.04);
+	cursor: pointer;
+}
+
+input:hover {
+	border-style: solid;
+	background-color:rgba(0,0,0,.04);
+	cursor: pointer;
+}
+
+.post {
+	color: #f6b3e5;
+	border-radius: 4px;
+	padding: 0.5em;;
+	border-width: 2px;
+	border-style: solid;
+	background-color:rgba(0,0,0,.2);
+	border-color: #1A1A1A;
+}
+
+.post_content h1 {
+	font-weight: bold;
+	color: red;
+}
+
+.post_content a {
+	padding: 0px;
+	border: none;
+	background: none;
+	color: cyan;
+	font-weight: lighter;
+}
+
+.post_content a:hover {
+	color: lightcyan;
+}
+
+.post_content code {
+	font-family: monospace;
+	background: black;
+	color: white;
+}

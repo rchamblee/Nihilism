@@ -1,0 +1,110 @@
+/* line 1, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+body {
+  color: #f6b3e5;
+  background-color: #c876ff;
+}
+
+/* line 6, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+.banner {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: #1A1A1A;
+  border-width: 2px;
+  border-style: solid;
+  padding: 8px;
+  margin: 1em;
+}
+
+/* line 16, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+.post_form {
+  border-color: #1A1A1A;
+  border-width: 2px;
+  border-style: solid;
+  padding: 8px;
+  float: right;
+  position: -webkit-sticky;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #8c53b3;
+}
+
+/* line 28, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+.post_form textarea {
+  width: 30em;
+  height: 10em;
+}
+
+/* line 33, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+a {
+  padding: 4px;
+  color: #f6b3e5;
+  text-decoration: none;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: outset;
+  border-color: #1A1A1A;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* line 45, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+input {
+  padding: 4px;
+  color: #f6b3e5;
+  text-decoration: none;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: outset;
+  border-color: #1A1A1A;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* line 57, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+a:hover {
+  border-style: solid;
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+/* line 63, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+input:hover {
+  border-style: solid;
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+/* line 69, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+.post {
+  color: #f6b3e5;
+  border-radius: 4px;
+  padding: 8px;
+  border-width: 2px;
+  border-style: solid;
+  /*background-color: #a46895;)*/
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #1A1A1A;
+}
+
+/* line 80, /home/faissaloo/OneBoard/app/assets/stylesheets/index.scss */
+.post_content a {
+  padding: 0px;
+  border: none;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
