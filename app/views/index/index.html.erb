@@ -25,9 +25,14 @@
 
 <% def display_thread(parent=nil) %>
 	<%= content_tag(:div, class: "post") do %>
-		<%= content_tag(:a, "Reply", href: parent&.id.to_s+"#reply-"+parent&.id.to_s, id: "reply-"+parent&.id.to_s)%> 
-		<%= parent&.id %>
-		<%= parent&.created_at&.strftime("%d/%m/%Y %H:%M") %>
+		<% if parent %>
+			<%= content_tag(:a, "Reply", href: parent.id.to_s+"#reply-"+parent.id.to_s, id: "reply-"+parent.id.to_s)%> 
+			<%= parent&.id %>
+			<%= parent&.created_at&.strftime("%d/%m/%Y %H:%M") %>
+		<% else %>
+			<%= content_tag(:a, "Post", href: "/#top", id: "top")%> 
+		<% end %>
+		
 		<br/>
 		<%= content_tag(:p, parent&.message, class: "post_content") %>
 		<% Post.where(parent: parent).each do |post| %>
