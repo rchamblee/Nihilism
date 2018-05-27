@@ -13,4 +13,12 @@ RSpec.describe Post, type: :model do
     post = Post.new(message: "LOTTA LOYALTY FOR A HIRED GUN")
     expect(post).to be_valid
   end
+  
+  it "deletes old posts after the limit of 255 has been reached" do
+    Post.create(message: "Bring back freddo frogs")
+    255.times do
+      Post.create(message: "E")
+    end
+    expect(Post.exists?(message: "Bring back freddo frogs")).to be_falsey
+  end
 end
