@@ -110,4 +110,11 @@ feature 'Forms' do
 		click_button "post"
 		expect(page.status_code).to eq(400)
 	end
+	
+	scenario "attempting to reply to a nonexistent post should" do
+		visit "/57"
+		fill_in "msg", with: script[0]
+		click_button "post"
+		expect(page.status_code).to eq(400)
+	end
 end
