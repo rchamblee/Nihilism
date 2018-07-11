@@ -1,12 +1,16 @@
 class Post < ActiveRecord::Base
-	@@markdown = Redcarpet::Markdown.new(Redcarpet::Render::Safe.new(no_images: true), fenced_code_blocks: true)
+	@@spec = Riseup::Spec.new([[CGI::escapeHTML("\n"),"<br/>"],
+		[CGI::escapeHTML("=="),"<span class=\"redtext\">","</span>"],
+		[CGI::escapeHTML("**"),"<b>","</b>"],
+		[CGI::escapeHTML("*"),"<i>","</i>"],
+		])
 
 	validates :message, :presence => true
 	after_create :post_cap
 	after_update :update_children
 
 	def html
-		@@markdown.render(self.message)
+		"<p>"+Riseup::Parser.new(CGI::escapeHTML(self.message),@@spec).parse+"</p>"
 	end
 	
 	def self.reply(msg, parent_id="")

@@ -18,3 +18,4 @@
 
 # Nano lock files
 *.swp
+*.lock
