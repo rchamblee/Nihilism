@@ -105,9 +105,22 @@ input:hover {
 	border-color: #1A1A1A;
 }
 
-.post_content h1 {
+.post_content .redtext {
 	font-weight: bold;
 	color: red;
+}
+
+.post_content .rainbowtext {
+	font-weight: bold;
+	animation: rainbow 1s infinite;
+}
+
+@keyframes rainbow{
+	0%{color: crimson;}
+	25%{color: violet;}
+	50%{color: aqua;}
+	75%{color: violet;}
+	100%{color: crimson;}
 }
 
 .post_content a {
