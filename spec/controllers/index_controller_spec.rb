@@ -54,10 +54,13 @@ RSpec.describe IndexController, type: :controller do
 end
 
 feature 'Forms' do
-	scenario "creating line breaks in posts" do
-		Post.reply("I ponder of something great  \nMy lungs will fill and then deflate")
+	scenario "basic formating" do
+		Post.reply("I ==ponder== *of* **something great**\nMy lungs will fill and then deflate")
 		visit "/"
 		expect(page).to have_xpath("//div[@class='post_content']/p/br")	
+		expect(page).to have_xpath("//div[@class='post_content']/p/span")	
+		expect(page).to have_xpath("//div[@class='post_content']/p/i")	
+		expect(page).to have_xpath("//div[@class='post_content']/p/b")	
 	end
 	
 	scenario "should not be able to add images" do
