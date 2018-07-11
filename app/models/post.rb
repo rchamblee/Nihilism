@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
 		[escape("\\#"),escape("#")],
 		[escape("=="),"<span class=\"redtext\">","</span>"],
 		[escape("$"),"<span class=\"rainbowtext\">","</span>"],
-		[escape("#"),"<span class=\"3dtext\">","</span>"],
+		[escape("#"),"<span class=\"threedtext\">","</span>"],
 		[escape("`"), "<code>","</code>"],
 		[escape("**"),"<b>","</b>"],
 		[escape("*"),"<i>","</i>"],
