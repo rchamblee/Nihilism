@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 	@@spec = Riseup::Spec.new([[CGI::escapeHTML("\n"),"<br/>"],
 		[CGI::escapeHTML("=="),"<span class=\"redtext\">","</span>"],
+		[CGI::escapeHTML("$"),"<span class=\"rainbowtext\">","</span>"],
+		[CGI::escapeHTML("`"), "<code>","</code>"],
 		[CGI::escapeHTML("**"),"<b>","</b>"],
 		[CGI::escapeHTML("*"),"<i>","</i>"],
 		])
