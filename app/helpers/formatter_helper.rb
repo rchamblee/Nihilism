@@ -10,6 +10,7 @@ module FormatterHelper
 		[escape("\\*"),escape("*")],
 		[escape("\\#"),escape("#")],
 		[escape("=="),"<span class=\"redtext\">","</span>"],
+		[escape("$$"),"<span class=\"shaketext\">","</span>"],
 		[escape("$"),"<span class=\"rainbowtext\">","</span>"],
 		[escape("#"),"<span class=\"threedtext\">","</span>"],
 		[escape("`"), "<code>","</code>"],
