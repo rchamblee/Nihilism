@@ -105,13 +105,14 @@ input:hover {
 	border-color: #1A1A1A;
 }
 
-.post_content .redtext {
+.redtext {
 	font-weight: bold;
 	font-size: 1.5em;
 	color: red;
+	text-transform: uppercase;
 }
 
-.post_content .threedtext {
+.threedtext {
 	text-shadow: 0 1px 0 #ccc,
 		0 2px 0 #c9c9c9,
 		0 3px 0 #bbb,
@@ -126,7 +127,7 @@ input:hover {
 		0 20px 20px rgba(0,0,0,.15);
 }
 
-.post_content .rainbowtext {
+.rainbowtext {
 	animation: rainbow 1s infinite;
 }
 
@@ -150,7 +151,7 @@ input:hover {
 	color: lightcyan;
 }
 
-.post_content code {
+code {
 	font-family: monospace;
 	background: black;
 	color: white;
