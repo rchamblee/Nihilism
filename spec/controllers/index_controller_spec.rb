@@ -55,10 +55,12 @@ end
 
 feature 'Forms' do
 	scenario "basic formating" do
-		Post.reply("I ==ponder== *of* **something great**\nMy lungs will fill and then deflate")
+		Post.reply("I ==ponder== *of* **something** $great$\nMy lungs will fill and then `deflate`")
 		visit "/"
 		expect(page).to have_xpath("//div[@class='post_content']/p/br")	
-		expect(page).to have_xpath("//div[@class='post_content']/p/span")	
+		expect(page).to have_xpath("//div[@class='post_content']/p/span[@class='redtext']")
+		expect(page).to have_xpath("//div[@class='post_content']/p/span[@class='rainbowtext']")
+		expect(page).to have_xpath("//div[@class='post_content']/p/code")
 		expect(page).to have_xpath("//div[@class='post_content']/p/i")	
 		expect(page).to have_xpath("//div[@class='post_content']/p/b")	
 	end
