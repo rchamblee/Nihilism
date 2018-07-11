@@ -64,6 +64,16 @@ feature 'Forms' do
 		expect(page).to have_xpath("//div[@class='post_content']/p/i")	
 		expect(page).to have_xpath("//div[@class='post_content']/p/b")	
 	end
+
+	scenario "formating escapes" do
+		Post.reply("I \\==ponder=\\= \\*of\\* \\*\\*something\\*\\* \\$great\\$My lungs will fill and then \\`deflate\\`")
+		visit "/"
+		expect(page).to_not have_xpath("//div[@class='post_content']/p/span[@class='redtext']")
+		expect(page).to_not have_xpath("//div[@class='post_content']/p/span[@class='rainbowtext']")
+		expect(page).to_not have_xpath("//div[@class='post_content']/p/code")
+		expect(page).to_not have_xpath("//div[@class='post_content']/p/i")	
+		expect(page).to_not have_xpath("//div[@class='post_content']/p/b")	
+	end
 	
 	scenario "should not be able to add images" do
 		Post.reply('![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")')
