@@ -114,6 +114,16 @@ input:hover {
 	text-transform: uppercase;
 }
 
+.spoiler {
+	background-color: black;
+	color: black;
+	padding: 0.3em;
+}
+
+.spoiler:hover {
+	color: white;
+}
+
 .threedtext {
 	text-shadow: 0 1px 0 #ccc,
 		0 2px 0 #c9c9c9,

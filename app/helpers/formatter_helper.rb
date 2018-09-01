@@ -6,10 +6,12 @@ module FormatterHelper
 	@@spec = Riseup::Spec.new([[escape("\n"),"<br/>"],
 		[escape("\\="),escape("=")],
 		[escape("\\$"),escape("$")],
+		[escape("\\%"),escape("%")],
 		[escape("\\`"),escape("`")],
 		[escape("\\*"),escape("*")],
 		[escape("\\#"),escape("#")],
 		[escape("=="),"<span class=\"redtext\">","</span>"],
+		[escape("%%"),"<span class=\"spoiler\">","</span>"],
 		[escape("$$"),"<span class=\"shaketext\">","</span>"],
 		[escape("$"),"<span class=\"rainbowtext\">","</span>"],
 		[escape("#"),"<span class=\"threedtext\">","</span>"],
@@ -17,7 +19,7 @@ module FormatterHelper
 		[escape("**"),"<b>","</b>"],
 		[escape("*"),"<i>","</i>"],
 		])
-	
+
 	def self.format(str)
 		Riseup::Parser.new(self.escape(str),@@spec).parse
 	end
