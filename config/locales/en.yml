@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  simple_captcha:
+    placeholder: "captcha"
+    label: ""

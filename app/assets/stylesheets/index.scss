@@ -79,7 +79,7 @@ a:hover {
 	cursor: pointer;
 }
 
-input {
+input[type=button],input[type=submit] {
 	padding: 4px;
 	color: #f6b3e5;
 	text-decoration: none;
@@ -91,7 +91,7 @@ input {
 	border-radius: 4px;
 }
 
-input:hover {
+input[type=button]:hover, input[type=submit]:hover {
 	border-style: solid;
 	background-color:rgba(0,0,0,.04);
 	cursor: pointer;

@@ -22,6 +22,7 @@
 		<br/>
 		<%= label_tag(:msg, "Message:") %><br/>
 		<%= text_area_tag(:msg, "", autofocus: true) %><br/>
+		<%= show_simple_captcha %>
 		<%= submit_tag("post") %>
 	<% end %>
 <% end %>
