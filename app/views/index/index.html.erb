@@ -1,5 +1,6 @@
 <%= content_tag(:div, class: "banner") do%>
-	<%= image_tag "spurdo.gif" %>
+	<%= image_tag @heading_image, id: "heading_image" %>
+
 	<%= content_tag(:h2) do%>
 		<%= FormatterHelper.heading.html_safe %>
 	<% end %>
