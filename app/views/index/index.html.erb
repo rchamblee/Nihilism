@@ -1,7 +1,11 @@
 <%= content_tag(:div, class: "banner") do%>
-	<%= image_tag "spurdo.gif" %>
-	<%= content_tag(:h2) do%>
+	<%= image_tag @heading_image, id: "heading_image" %>
+
+	<%= content_tag(:h2) do %>
 		<%= FormatterHelper.heading.html_safe %>
+	<% end %>
+	<%= content_tag(:h4) do %>
+		Bitcoin: 1LseDRH9dywzfpW6vGpkaNYpQWSpaqwz44
 	<% end %>
 	<%= content_tag(:div, id: "about_opener") do %>
 		<%= content_tag(:a, id: "about_button") do %>

@@ -20,3 +20,4 @@
 # Nano lock files
 *.swp
 *.lock
+.DS_STORE

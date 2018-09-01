@@ -1,6 +1,7 @@
 class IndexController < ApplicationController
 	def index
 		@reply_to = params[:id]
+		@heading_image = Dir.glob("#{Rails.root}/app/assets/images/heading/*").sample.split("#{Rails.root}/app/assets/images/")[1] #Dir.glob("*")
 	end
 
 	def post
