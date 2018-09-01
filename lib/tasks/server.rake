@@ -10,6 +10,12 @@ namespace :server do
     end
   end
 
+  desc "Deploy the server in development mode"
+  task dev: :environment do
+    printf `rake assets:clean assets:precompile db:migrate`
+    printf `rails s -d -p 3000`
+  end
+
   desc "Kill the server"
   task kill: :environment do
     printf `kill #{`cat tmp/pids/server.pid`}`
