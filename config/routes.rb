@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/" => "index#post"
   get "/:id" => "index#index"
   root to: "index#index"  
+  mount LetsEncrypt::Engine => '/.well-known'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

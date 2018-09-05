@@ -6,7 +6,7 @@ namespace :server do
     else
       # In future we need to set it up so static assets are served externally
       printf `RAILS_ENV=production rake assets:clean assets:precompile db:migrate`
-      printf `RAILS_ENV=production SECRET_KEY_BASE=#{ENV['SECRET_KEY_BASE']} rails s -d -p 80 -b 0.0.0.0 -e production`
+      printf `RAILS_ENV=production SECRET_KEY_BASE=#{ENV['SECRET_KEY_BASE']} rails s -d -p 8080 -b 0.0.0.0 -e production`
     end
   end
 

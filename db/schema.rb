@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180901135003) do
+ActiveRecord::Schema.define(version: 20180901145734) do
+
+  create_table "letsencrypt_certificates", force: :cascade do |t|
+    t.string   "domain"
+    t.text     "certificate",         limit: 65535
+    t.text     "intermediaries",      limit: 65535
+    t.text     "key",                 limit: 65535
+    t.datetime "expires_at"
+    t.datetime "renew_after"
+    t.string   "verification_path"
+    t.string   "verification_string"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "letsencrypt_certificates", ["domain"], name: "index_letsencrypt_certificates_on_domain"
+  add_index "letsencrypt_certificates", ["renew_after"], name: "index_letsencrypt_certificates_on_renew_after"
 
   create_table "posts", force: :cascade do |t|
     t.integer  "parent"
