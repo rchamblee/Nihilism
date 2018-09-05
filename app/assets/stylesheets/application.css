@@ -189,3 +189,14 @@ code {
 	background: black;
 	color: white;
 }
+
+.post_content {
+	overflow-wrap: break-word;
+	overflow-y: hidden;
+	max-height: 25em;
+  text-overflow: ellipsis;
+}
+
+.post_content:hover {
+	max-height: none;
+}
