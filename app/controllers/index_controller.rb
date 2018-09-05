@@ -7,8 +7,14 @@ class IndexController < ApplicationController
 	def post
 		begin
 			if simple_captcha_valid?
-				post_id = Post.reply(params.require(:msg),params[:parent]).to_s
-				redirect_to "/"+post_id+"#reply-"+post_id
+				msg = params.require(:msg)
+				if msg.length > 8192
+					@error_msg = "Bad request: Post too long"
+					render status: :bad_request
+				else
+					post_id = Post.reply(params.require(:msg), params[:parent]).to_s
+					redirect_to "/"+post_id+"#reply-"+post_id
+				end
 			else
 				@error_msg = "Bad request: Invalid CAPTCHA"
 				render status: :bad_request
