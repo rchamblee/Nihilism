@@ -20,8 +20,10 @@
 <%= content_tag(:div, class: "post_form") do %>
 	<% if @reply_to %>
 		Replying to post <%= @reply_to %>
+	<% else %>
+		Posting
 	<% end %>
-	<%= form_tag("", method: "post") do %>
+	<%= form_tag("", method: "post", class: "post_form_contents") do %>
 		<%= hidden_field_tag(:parent, @reply_to) %>
 		<br/>
 		<%= label_tag(:msg, "Message:") %><br/>

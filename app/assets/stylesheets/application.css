@@ -4,6 +4,14 @@ body {
 	font-family: sans-serif;
 }
 
+.post_form_contents {
+	display: none;
+}
+
+.post_form:hover .post_form_contents {
+	display: block;
+}
+
 a {
 	color: #f6b3e5;
 	font-weight: bold;
