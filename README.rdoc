@@ -3,6 +3,7 @@
 
 OneBoard is an anonymous javascriptless textboard written in Ruby on Rails.  
 Setup is easy:
+<tt>install imagemagick</tt>
 <tt>bundle install; rake db:create db:migrate</tt>  
 
 To start:
