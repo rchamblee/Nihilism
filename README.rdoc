@@ -7,3 +7,5 @@ Setup is easy:
 
 To start:
 <tt>bin/rails server</tt>  
+
+This is a fork of faissaloo's original code. Please check out their repo at https://github.com/faissaloo/Ratwires
