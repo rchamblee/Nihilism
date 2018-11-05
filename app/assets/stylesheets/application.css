@@ -1,6 +1,6 @@
 body {
-	color: #f6b3e5;
-	background-color: #c876ff;
+	color: white;
+	background-color: black;
 	font-family: sans-serif;
 }
 
@@ -13,7 +13,7 @@ body {
 }
 
 a {
-	color: #f6b3e5;
+	color: white;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -54,7 +54,7 @@ a:hover {
 }
 
 .post_form {
-	border-color: #1A1A1A;
+	border-color: white;
 	border-width: 2px;
 	border-style: solid;
 	padding: 8px;
@@ -63,8 +63,9 @@ a:hover {
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	background-color: #8c53b3;
+	background-color: lightgray;
 	z-index: 255;
+	color: black;
 }
 
 .post_form textarea {
@@ -74,12 +75,12 @@ a:hover {
 
 .post a {
 	padding: 4px;
-	color: #f6b3e5;
+	color: white;
 	text-decoration: none;
 	font-weight: bold;
 	border-width: 2px;
 	border-style: outset;
-	border-color: #1A1A1A;
+	border-color: white;
 	background-color:rgba(0,0,0,.2);
 	border-radius: 4px;
 	margin: 0.1em;;
@@ -93,12 +94,12 @@ a:hover {
 
 input[type=button],input[type=submit] {
 	padding: 4px;
-	color: #f6b3e5;
+	color: white;
 	text-decoration: none;
 	font-weight: bold;
 	border-width: 2px;
 	border-style: outset;
-	border-color: #1A1A1A;
+	border-color: white;
 	background-color:rgba(0,0,0,.2);
 	border-radius: 4px;
 }
@@ -110,13 +111,13 @@ input[type=button]:hover, input[type=submit]:hover {
 }
 
 .post {
-	color: #f6b3e5;
+	color: white;
 	border-radius: 4px;
 	padding: 0.5em;;
 	border-width: 2px;
 	border-style: solid;
 	background-color:rgba(0,0,0,.2);
-	border-color: #1A1A1A;
+	border-color: white;
 }
 
 .redtext {
